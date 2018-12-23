@@ -7,20 +7,27 @@ class MyCard extends React.Component {
         return (
             <div>
                 <StyledCard title={this.props.text}>
-                    <CardMedia>
+                    <StyledCardMedia>
                         {this.props.header}
-                    </CardMedia>
-                    <CardContent>
+                    </StyledCardMedia>
+                    <StyledCardContent>
                         {this.props.content}
-                    </CardContent>
+                    </StyledCardContent>
                 </StyledCard>
-                {/* <Button variant="contained" color="primary">
-                    <Icon>star</Icon> {this.props.buttonText}
-                </Button> */}
             </div >
         );
     }
 }
+
+const StyledCardMedia = styled(CardMedia)`
+    font-size: 18px;
+    margin: 5px;
+    font-family: Coda;
+`
+
+const StyledCardContent = styled(CardContent)`
+    font-size: 12px;
+`
 
 const StyledCard = styled(Card)`
     font-size: 0.8em;

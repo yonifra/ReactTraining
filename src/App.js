@@ -15,24 +15,40 @@ const routes = [
     path: '/',
     exact: true,
     sidebar: () => <div>home!</div>,
-    main: () => <h2>Home</h2>
+    main: () => <MyCard text="Main" header="Main" content="Now we're in the main page" />
   },
   {
     path: '/bubblegum',
     sidebar: () => <div>bubblegum!</div>,
-    main: () => <h2>Bubblegum</h2>
+    main: () => <MyCard text="Main" header="Bubblegum" content="This is the bubblegum route" />
   },
   {
     path: '/shoelaces',
     sidebar: () => <div>shoelaces!</div>,
-    main: () => <h2>Shoelaces</h2>
+    main: () => <MyCard text="Main" header="Shoelaces" content="Hey! We're in the shoelaces route!" />
   }
 ]
 
+const state = {
+  first: 'Yoni',
+  last: 'Fraimorice',
+  id: 1,
+  selectedPath: '/'
+}
+
 class App extends Component {
+  componentWillMount = () => {
+    this.setState(state);
+  }
+
+  hello = (path) => {
+    console.log(path);
+  }
+
   render() {
+    console.log(this);
     return (
-      <Router>
+      < Router >
         <div style={{ display: 'flex' }}>
           <div style={{
             padding: '10px',
@@ -65,7 +81,7 @@ class App extends Component {
             ))}
           </div>
         </div>
-      </Router>
+      </Router >
     )
   }
 }
