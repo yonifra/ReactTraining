@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card, Button, Icon, CardHeader, CardContent, CardMedia } from '@material-ui/core';
+import { Card, CardContent, CardMedia, Button, Icon } from '@material-ui/core';
 import styled from 'styled-components';
 
-class MyCard extends React.Component {
+export default class MyCard extends React.Component {
     render() {
         return (
             <div>
@@ -14,9 +14,9 @@ class MyCard extends React.Component {
                         {this.props.content}
                     </CardContent>
                 </StyledCard>
-                {/* <Button variant="contained" color="primary">
+                <Button variant="contained" color="primary">
                     <Icon>star</Icon> {this.props.buttonText}
-                </Button> */}
+                </Button>
             </div >
         );
     }
@@ -26,6 +26,5 @@ const StyledCard = styled(Card)`
     font-size: 0.8em;
     color: black;
     padding: 5px;
+    margin: 6px;
 `;
-
-export default MyCard;
